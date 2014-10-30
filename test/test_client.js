@@ -23,11 +23,12 @@ describe('WSMsgBroker tests', function () {
 
     it('should send "foo" to "client1" and get a "bar" answer', function (done) {
         client1.on('message', function fooHandler(msg, sender) {
+            expect(msg).to.equal([5, 3]);
             sender.send('bar');
             client1.off('message', fooHandler);
         });
 
-        client0.send('foo', 'client1', function (from, answer) {
+        client0.send([5, 3], 'client1', function (from, answer) {
             expect(from).to.equal('client1');
             expect(answer).to.equal('bar');
             done();
