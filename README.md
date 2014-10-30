@@ -28,6 +28,6 @@ client1.on('registered', function () {
 ```
 
 ## Client.send(msg, dest, callback)
-**msg**: {Mixed} The thing you want to send (/!\ it HAS TO be serializable by JSON.stringify(...))
-**dest**: {String|Array} Your message receiver(s) (determined by the `id` used at the creation of the client)
-**callback**: [optional] {Function} if set, it will allow a receiver to answer (fastest wins)
+**msg**: {Mixed} The thing you want to send (/!\ it HAS TO be serializable by JSON.stringify(...))  
+**dest**: {String|Array} Your message receiver(s) (determined by the `id` used at the creation of the client)  
+**callback**: [optional] {Function} if set, it will allow a receiver to answer (fastest wins)  
