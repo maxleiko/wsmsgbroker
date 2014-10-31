@@ -26,3 +26,13 @@ setTimeout(function () {
         }, 0);
     });
 }, 1000);
+
+setTimeout(function () {
+    client0.on('unregistered', function (id) {
+        console.log(id, 'unregistered');
+        client0.close();
+        client1.close();
+        server.close();
+    });
+    client0.unregister();
+}, 2000);

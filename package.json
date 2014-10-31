@@ -6,6 +6,10 @@
   "scripts": {
     "test": "mocha"
   },
+  "bin": {
+    "wsbrokerclient": "./bin/wsbrokerclient.js",
+    "wsbrokerserver": "./bin/wsbrokerserver.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/maxleiko/wsmsgbroker.git"
