@@ -1,6 +1,6 @@
 {
   "name": "wsmsgbroker",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "WebSocket message broker using native WebSocket implementation and a lightweight full-JSON encoded protocol scheme",
   "main": "index.js",
   "scripts": {
