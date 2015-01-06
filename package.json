@@ -7,7 +7,6 @@
     "test": "mocha"
   },
   "bin": {
-    "wsbrokerclient": "./bin/wsbrokerclient.js",
     "wsbrokerserver": "./bin/wsbrokerserver.js"
   },
   "repository": {
