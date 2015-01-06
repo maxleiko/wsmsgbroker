@@ -3,22 +3,30 @@ var expect = require('chai').expect;
 
 var WSMsgBroker = require('../index');
 
+function errorHandler(e) {
+    throw e;
+}
+
 describe('WSMsgBroker tests', function () {
     var server = new WSMsgBroker.Server(9050);
     var client0, client1, client2;
 
+    server.on('error', errorHandler);
+
+    server.on('warn', function (e) {
+        console.warn('WARN', e.message);
+    });
+
     it('should create and register a new WSMsgBroker client "client0" on the server', function (done) {
         client0 = new WSMsgBroker('client0', 'localhost', 9050);
-        client0.on('registered', function () {
-            done();
-        });
+        client0.on('registered', done);
+        client0.on('error', errorHandler);
     });
 
     it('should create and register a new WSMsgBroker client "client1" on the server', function (done) {
         client1 = new WSMsgBroker('client1', 'localhost', 9050);
-        client1.on('registered', function () {
-            done();
-        });
+        client1.on('registered', done);
+        client1.on('error', errorHandler);
     });
 
     it('should send "foo" to "client1" and get a "bar" answer', function (done) {
@@ -46,9 +54,8 @@ describe('WSMsgBroker tests', function () {
 
     it('should create and register a new WSMsgBroker client "client2" on the server', function (done) {
         client2 = new WSMsgBroker('client2', 'localhost', 9050);
-        client2.on('registered', function () {
-            done();
-        });
+        client2.on('registered', done);
+        client2.on('error', errorHandler);
     });
 
     it('should send {foo: "bar"} to "client1" & "client2" and get a {bar: <CLIENT_ID>} answer from the fastest', function (done) {

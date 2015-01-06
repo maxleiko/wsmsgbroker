@@ -19,7 +19,6 @@ function answerHandler(asker, msg) {
     return function (responseFrom, answer) {
         var test = expected[asker.id+'_'+msg];
         if (test.from === asker.id && test.send === answer && test.to === responseFrom) {
-//            console.log(chalk.green('OK'), test);
             count++;
             if (count >= nbClients) {
                 console.log(chalk.green('Ok with')+' '+nbClients+' '+chalk.green('clients'));
