@@ -13,10 +13,6 @@ describe('WSMsgBroker tests', function () {
 
     server.on('error', errorHandler);
 
-    server.on('warn', function (e) {
-        console.warn('WARN', e.message);
-    });
-
     it('should create and register a new WSMsgBroker client "client0" on the server', function (done) {
         client0 = new WSMsgBroker('client0', 'localhost', 9050);
         client0.on('registered', done);
@@ -79,4 +75,3 @@ describe('WSMsgBroker tests', function () {
         });
     });
 });
-

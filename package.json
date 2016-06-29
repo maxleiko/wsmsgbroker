@@ -1,10 +1,10 @@
 {
   "name": "wsmsgbroker",
-  "version": "1.6.7",
+  "version": "1.7.0",
   "description": "WebSocket message broker using native WebSocket implementation and a lightweight full-JSON encoded protocol scheme",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test/test_client.js"
   },
   "bin": {
     "wsbrokerserver": "./bin/wsbrokerserver.js"
@@ -28,12 +28,15 @@
   },
   "homepage": "https://github.com/maxleiko/wsmsgbroker",
   "dependencies": {
+    "bufferutil": "^1.2.1",
     "chalk": "^0.5.1",
     "node-uuid": "^1.4.1",
-    "ws": "^0.4.32"
+    "utf-8-validate": "^1.2.1",
+    "ws": "^1.1.1"
   },
   "devDependencies": {
     "chai": "^1.9.2",
+    "mocha": "^2.5.3",
     "randomstring": "^1.0.3"
   }
 }
