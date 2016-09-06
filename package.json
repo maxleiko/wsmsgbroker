@@ -1,6 +1,6 @@
 {
   "name": "wsmsgbroker",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "WebSocket message broker using native WebSocket implementation and a lightweight full-JSON encoded protocol scheme",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,6 @@
   "homepage": "https://github.com/maxleiko/wsmsgbroker",
   "dependencies": {
     "bufferutil": "^1.2.1",
-    "node-uuid": "^1.4.1",
     "utf-8-validate": "^1.2.1",
     "ws": "^1.1.1"
   },
